@@ -47,6 +47,19 @@ public class Controller
 	
 	public static void SimplifyingPolynomials()
 	{
+		int highestExponentCountingDown;
+		int highestExponent = ConsoleIO.promptForInt("What is the highest Exponent : ", 1, 50);
+		highestExponentCountingDown = highestExponent;
+		int[] coefficients = new int[highestExponent];
+		
+		for(int i = 0; i < highestExponent; i++)
+		{
+			
+			coefficients[i] = ConsoleIO.promptForInt("What is the coefficent for the " + highestExponentCountingDown + "th exponent.\nAnswer: ", 0, 255);
+			highestExponentCountingDown--;
+			
+		}
+		
 		
 	}
 	

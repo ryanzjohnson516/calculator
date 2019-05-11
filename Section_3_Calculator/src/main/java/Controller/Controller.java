@@ -1,9 +1,13 @@
 package Controller;
 
 import lib.ConsoleIO;
+import models.Polynomial;
 
 public class Controller 
 {
+	
+	public static double MaxNumOfExponents = 50;
+	public static double MaxNumOfCoefficients = 255;
 
 	public static void main(String[] args) 
 	{
@@ -47,19 +51,22 @@ public class Controller
 	
 	public static void SimplifyingPolynomials()
 	{
-		int highestExponentCountingDown;
-		int highestExponent = ConsoleIO.promptForInt("What is the highest Exponent : ", 1, 50);
+		double highestExponentCountingDown;
+		double highestExponent = ConsoleIO.promptForInt("What is the highest Exponent : ", 1, (int) MaxNumOfExponents);
 		highestExponentCountingDown = highestExponent;
-		int[] coefficients = new int[highestExponent];
+		double[] coefficients = new double[(int) highestExponent];
 		
 		for(int i = 0; i < highestExponent; i++)
 		{
 			
-			coefficients[i] = ConsoleIO.promptForInt("What is the coefficent for the " + highestExponentCountingDown + "th exponent.\nAnswer: ", 0, 255);
+			coefficients[i] = ConsoleIO.promptForInt("What is the coefficent for the " + highestExponentCountingDown + "th exponent.\nAnswer: ", 0, (int) MaxNumOfCoefficients);
 			highestExponentCountingDown--;
 			
 		}
 		
+		Polynomial polynomial = new Polynomial(highestExponent, coefficients);
+		
+		polynomial.print();
 		
 	}
 	

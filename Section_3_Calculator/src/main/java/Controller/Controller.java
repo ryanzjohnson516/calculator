@@ -66,7 +66,7 @@ public class Controller
 		
 		Polynomial polynomial = new Polynomial(highestExponent, coefficients);
 		
-		polynomial.print();
+		polynomial.Print();
 		
 	}
 	

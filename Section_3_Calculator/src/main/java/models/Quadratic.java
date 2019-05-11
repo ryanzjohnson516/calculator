@@ -2,39 +2,63 @@ package models;
 
 public class Quadratic {
 
-	public double a;
-	public double b;
-	public double c;
+	public double a = 0;
+	public double b = 0;
+	public double c = 0;
+	public double posx = 0;
+	public double negx = 0;
+	public double yint = 0;
+	public double vertexX = 0;
+	public double vertexY = 0;
+	public double squaree = 0;
+	public double squarerooted = 0;
+	
 	
 	public Quadratic(double a, double b, double c) {
 		this.a = a;
 		this.b = b;
 		this.c = c;
+		yint = c;
+		squaree = (b*b) - (4*(a)*(c));
+		squarerooted = Math.sqrt(squaree);
+		findPosX();
+		findNegX();
 	}
 
-	public double getA() {
-		return a;
+	
+	public void findPosX() {
+		posx = (-b) + squarerooted / (2*(a));
+	} 
+	
+	public void findNegX() {
+		negx = (-b) - squarerooted / (2*(a));
 	}
 
-	public void setA(double a) {
-		this.a = a;
+	public double getPosx() {
+		return posx;
 	}
 
-	public double getB() {
-		return b;
+
+	public double getNegx() {
+		return negx;
 	}
 
-	public void setB(double b) {
-		this.b = b;
+	public double getYint() {
+		return yint;
 	}
 
-	public double getC() {
-		return c;
+
+	public double getVertexX() {
+		return vertexX;
 	}
 
-	public void setC(double c) {
-		this.c = c;
+	public double getVertexY() {
+		return vertexY;
 	}
+
+
+	
+	
 	
 	
 }

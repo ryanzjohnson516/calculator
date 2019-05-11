@@ -85,8 +85,8 @@ public class Polynomial {
 		double[] numOfNegRealRoots = new double[(int) HighestExponent];
 		
 		
-		
-		
+		//ToDo
+		return null;
 	}
 	
 	public void Print()
